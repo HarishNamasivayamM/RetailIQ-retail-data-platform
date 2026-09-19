@@ -131,7 +131,8 @@ by Git. For the full Snowflake + dbt + Airflow path, follow
 The project includes several presentation paths so the work can be reviewed
 without a Power BI license or a `.pbix` file:
 
-- **Streamlit:** run `python -m pip install -r requirements-demo.txt`, then
+- **Live Streamlit dashboard:** [Open RetailIQ Revenue Analytics](https://retailiq-retail-data-platform-bv7cmxx76gmya93dhfzscx.streamlit.app/).
+- **Streamlit locally:** run `python -m pip install -r requirements-demo.txt`, then
   `streamlit run streamlit_app.py`. It defaults to the verified local snapshot
   and can optionally query the live Snowflake analytics schema.
 - **Airflow:** run `docker compose up -d` and open
