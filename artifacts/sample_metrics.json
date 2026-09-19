@@ -1,0 +1,278 @@
+{
+  "category_performance": [
+    {
+      "category": "Electronics",
+      "profit": 2279998.57,
+      "profit_margin_pct": 9.21,
+      "revenue": 24761568.74,
+      "units": 64808
+    },
+    {
+      "category": "Home",
+      "profit": 2435926.11,
+      "profit_margin_pct": 38.89,
+      "revenue": 6262833.79,
+      "units": 43822
+    },
+    {
+      "category": "Apparel",
+      "profit": 766559.43,
+      "profit_margin_pct": 44.58,
+      "revenue": 1719480.6,
+      "units": 26682
+    },
+    {
+      "category": "Grocery",
+      "profit": 97408.19,
+      "profit_margin_pct": 25.28,
+      "revenue": 385260.79,
+      "units": 26774
+    }
+  ],
+  "customer_revenue_percentiles": {
+    "median_customer_revenue": 13017.17,
+    "top_customer_revenue": 52499.11
+  },
+  "dataset": {
+    "category_count": 4,
+    "customer_count": 2000,
+    "date_max": "2025-12-31",
+    "date_min": "2024-01-01",
+    "path": "data\\sample\\retail_transactions.csv",
+    "product_count": 27,
+    "store_count": 8,
+    "transaction_count": 100000
+  },
+  "kpis": {
+    "average_order_value": 331.29,
+    "average_revenue_per_customer": 16564.57,
+    "profit_margin_pct": 16.84,
+    "repeat_customer_rate_pct": 100.0,
+    "revenue_growth_pct": 0.84,
+    "top_product_contribution_pct": 27.77,
+    "total_profit": 5579892.3,
+    "total_revenue": 33129143.92,
+    "total_transactions": 100000,
+    "units_sold": 162086
+  },
+  "monthly_revenue": [
+    {
+      "month": "2024-01",
+      "revenue": 1418276.9
+    },
+    {
+      "month": "2024-02",
+      "revenue": 1310791.94
+    },
+    {
+      "month": "2024-03",
+      "revenue": 1457206.76
+    },
+    {
+      "month": "2024-04",
+      "revenue": 1320745.78
+    },
+    {
+      "month": "2024-05",
+      "revenue": 1375540.8
+    },
+    {
+      "month": "2024-06",
+      "revenue": 1319832.65
+    },
+    {
+      "month": "2024-07",
+      "revenue": 1430685.88
+    },
+    {
+      "month": "2024-08",
+      "revenue": 1416107.35
+    },
+    {
+      "month": "2024-09",
+      "revenue": 1302752.93
+    },
+    {
+      "month": "2024-10",
+      "revenue": 1394351.62
+    },
+    {
+      "month": "2024-11",
+      "revenue": 1350205.04
+    },
+    {
+      "month": "2024-12",
+      "revenue": 1398854.03
+    },
+    {
+      "month": "2025-01",
+      "revenue": 1356351.21
+    },
+    {
+      "month": "2025-02",
+      "revenue": 1397539.51
+    },
+    {
+      "month": "2025-03",
+      "revenue": 1432397.14
+    },
+    {
+      "month": "2025-04",
+      "revenue": 1385258.71
+    },
+    {
+      "month": "2025-05",
+      "revenue": 1420015.81
+    },
+    {
+      "month": "2025-06",
+      "revenue": 1350546.68
+    },
+    {
+      "month": "2025-07",
+      "revenue": 1392936.0
+    },
+    {
+      "month": "2025-08",
+      "revenue": 1421616.26
+    },
+    {
+      "month": "2025-09",
+      "revenue": 1451849.89
+    },
+    {
+      "month": "2025-10",
+      "revenue": 1368258.4
+    },
+    {
+      "month": "2025-11",
+      "revenue": 1292876.65
+    },
+    {
+      "month": "2025-12",
+      "revenue": 1364145.98
+    }
+  ],
+  "store_performance": [
+    {
+      "profit": 696522.13,
+      "revenue": 4241488.3,
+      "store_id": "S006",
+      "store_location": "Boston"
+    },
+    {
+      "profit": 694704.74,
+      "revenue": 4197664.36,
+      "store_id": "S001",
+      "store_location": "Chicago"
+    },
+    {
+      "profit": 697572.02,
+      "revenue": 4180221.83,
+      "store_id": "S004",
+      "store_location": "Atlanta"
+    },
+    {
+      "profit": 696794.28,
+      "revenue": 4157214.45,
+      "store_id": "S008",
+      "store_location": "Minneapolis"
+    },
+    {
+      "profit": 697938.68,
+      "revenue": 4108140.31,
+      "store_id": "S007",
+      "store_location": "Phoenix"
+    },
+    {
+      "profit": 693610.07,
+      "revenue": 4102760.04,
+      "store_id": "S002",
+      "store_location": "Dallas"
+    },
+    {
+      "profit": 704243.07,
+      "revenue": 4080704.32,
+      "store_id": "S003",
+      "store_location": "Denver"
+    },
+    {
+      "profit": 698507.31,
+      "revenue": 4060950.31,
+      "store_id": "S005",
+      "store_location": "Seattle"
+    }
+  ],
+  "top_products": [
+    {
+      "category": "Electronics",
+      "product_id": "P001",
+      "product_name": "Laptop Pro 14",
+      "profit": 625322.85,
+      "revenue": 9199423.24
+    },
+    {
+      "category": "Electronics",
+      "product_id": "P004",
+      "product_name": "Smartphone X",
+      "profit": 293284.72,
+      "revenue": 6445958.85
+    },
+    {
+      "category": "Electronics",
+      "product_id": "P003",
+      "product_name": "4K Monitor",
+      "profit": 281221.76,
+      "revenue": 3103020.09
+    },
+    {
+      "category": "Home",
+      "product_id": "P015",
+      "product_name": "Robot Vacuum",
+      "profit": 705659.05,
+      "revenue": 2263588.37
+    },
+    {
+      "category": "Electronics",
+      "product_id": "P005",
+      "product_name": "Smartwatch",
+      "profit": 238103.82,
+      "revenue": 1744861.67
+    },
+    {
+      "category": "Home",
+      "product_id": "P010",
+      "product_name": "Air Purifier",
+      "profit": 526560.77,
+      "revenue": 1395937.76
+    },
+    {
+      "category": "Electronics",
+      "product_id": "P002",
+      "product_name": "Wireless Headphones",
+      "profit": 158248.54,
+      "revenue": 1392265.58
+    },
+    {
+      "category": "Electronics",
+      "product_id": "P007",
+      "product_name": "USB-C Dock",
+      "profit": 270195.9,
+      "revenue": 1082654.15
+    },
+    {
+      "category": "Electronics",
+      "product_id": "P008",
+      "product_name": "Portable SSD",
+      "profit": 198237.45,
+      "revenue": 970075.99
+    },
+    {
+      "category": "Home",
+      "product_id": "P013",
+      "product_name": "Nonstick Cookware",
+      "profit": 362389.32,
+      "revenue": 858797.02
+    }
+  ]
+}

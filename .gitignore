@@ -25,6 +25,7 @@ data/sample/*.csv
 data/sample/*.json
 artifacts/*.json
 artifacts/*.csv
+!artifacts/sample_metrics.json
 logs/
 airflow.cfg
 airflow.db
