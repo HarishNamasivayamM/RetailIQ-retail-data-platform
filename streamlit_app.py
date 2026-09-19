@@ -55,6 +55,13 @@ def configured_secret(name: str, default: str | None = None) -> str | None:
     return value or os.getenv(name, default)
 
 
+def snowflake_secrets_configured() -> bool:
+    return all(
+        configured_secret(name)
+        for name in ("SNOWFLAKE_ACCOUNT", "SNOWFLAKE_USER", "SNOWFLAKE_PASSWORD")
+    )
+
+
 @st.cache_data(ttl=300)
 def load_snowflake_metrics() -> dict[str, Any]:
     import snowflake.connector
@@ -205,7 +212,13 @@ def main() -> None:
         st.divider()
         st.caption("Local mode uses the reproducible 100,000-row synthetic baseline.")
 
-    if mode == "Live Snowflake":
+    if mode == "Live Snowflake" and not snowflake_secrets_configured():
+        st.info(
+            "Live Snowflake is not configured for this hosted demo. "
+            "Showing the verified local snapshot instead."
+        )
+        metrics = load_local_metrics()
+    elif mode == "Live Snowflake":
         try:
             metrics = load_snowflake_metrics()
             st.success("Connected to RETAILIQ.ANALYTICS")
