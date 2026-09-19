@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: mart_kpi_summary
+    description: "Daily KPI aggregate for Power BI time-series reporting."
+    columns:
+      - name: date_key
+        tests: [not_null, unique]
+      - name: total_revenue
+        tests: [not_null]
+  - name: mart_product_performance
+    description: "Product-level revenue, volume, and profitability mart."
+    columns:
+      - name: product_key
+        tests: [not_null, unique]
+  - name: mart_customer_performance
+    description: "Customer-level value and repeat-purchase mart."
+    columns:
+      - name: customer_key
+        tests: [not_null, unique]
+  - name: mart_store_performance
+    description: "Store-level revenue, volume, and profitability mart."
+    columns:
+      - name: store_key
+        tests: [not_null, unique]
+

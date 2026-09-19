@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: int_transaction_enriched
+    description: >-
+      Reusable transaction-level calculations. Grain remains one row per transaction line;
+      no aggregation occurs here.
+    columns:
+      - name: transaction_id
+        tests: [not_null, unique]
+      - name: gross_sales
+        description: "Quantity multiplied by unit price before discounts."
+      - name: discount_amount
+        description: "Gross sales minus net sales."
+      - name: profit_margin
+        description: "Profit divided by net sales; null when net sales is zero."
+

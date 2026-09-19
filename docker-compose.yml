@@ -1,0 +1,35 @@
+services:
+  airflow:
+    build:
+      context: .
+      dockerfile: docker/airflow/Dockerfile
+    image: retailiq-airflow:local
+    env_file:
+      - .env
+    environment:
+      AIRFLOW__CORE__EXECUTOR: SequentialExecutor
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "false"
+      AIRFLOW__CORE__DAGS_FOLDER: /opt/retailiq/dags
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: sqlite:////opt/airflow/airflow.db
+      AIRFLOW__WEBSERVER__WEB_SERVER_PORT: "8080"
+      AIRFLOW__WEBSERVER__EXPOSE_CONFIG: "false"
+      AIRFLOW__SCHEDULER__DAG_DIR_LIST_INTERVAL: "10"
+      PYTHONPATH: /opt/retailiq/src
+      RETAILIQ_PROJECT_ROOT: /opt/retailiq
+      RETAILIQ_SOURCE_PATH: /opt/retailiq/data/sample/retail_transactions.csv
+      RETAILIQ_PROCESSED_PATH: /opt/retailiq/data/processed/validated_transactions.csv
+      RETAILIQ_REJECTS_PATH: /opt/retailiq/data/processed/rejected_transactions.csv
+      RETAILIQ_REPORT_PATH: /opt/retailiq/artifacts/airflow_metrics.json
+      DBT_PROFILES_DIR: /opt/retailiq/docker/airflow
+      SNOWFLAKE_STAGE_PATH: ${SNOWFLAKE_STAGE_PATH:-RETAILIQ.RAW.RETAILIQ_STAGE/batch_001}
+    volumes:
+      - airflow_home:/opt/airflow
+      - ./:/opt/retailiq
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    command: ["bash", "/opt/retailiq/docker/airflow/entrypoint.sh"]
+
+volumes:
+  airflow_home:

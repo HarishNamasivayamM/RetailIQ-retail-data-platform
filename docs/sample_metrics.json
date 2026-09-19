@@ -1,0 +1,35 @@
+{
+  "dataset": {
+    "transaction_count": 100000,
+    "customer_count": 2000,
+    "product_count": 27,
+    "category_count": 4,
+    "store_count": 8,
+    "date_min": "2024-01-01",
+    "date_max": "2025-12-31",
+    "source": "Synthetic deterministic generator; seed=42"
+  },
+  "kpis": {
+    "total_revenue": 33129143.92,
+    "total_profit": 5579892.30,
+    "profit_margin_pct": 16.84,
+    "total_transactions": 100000,
+    "average_order_value": 331.29,
+    "units_sold": 162086,
+    "average_revenue_per_customer": 16564.57,
+    "repeat_customer_rate_pct": 100.0,
+    "revenue_growth_pct": 0.84,
+    "top_product_contribution_pct": 27.77
+  },
+  "category_performance": [
+    {"category": "Electronics", "revenue": 24761568.74, "profit_margin_pct": 9.21},
+    {"category": "Home", "revenue": 6262833.79, "profit_margin_pct": 38.89},
+    {"category": "Apparel", "revenue": 1719480.60, "profit_margin_pct": 44.58},
+    {"category": "Grocery", "revenue": 385260.79, "profit_margin_pct": 25.28}
+  ],
+  "top_product": {"product_id": "P001", "product_name": "Laptop Pro 14", "revenue": 9199423.24},
+  "lowest_margin_product": {"product_id": "P004", "product_name": "Smartphone X", "profit_margin_pct": 4.55},
+  "top_revenue_store": {"store_id": "S006", "location": "Boston", "revenue": 4241488.30},
+  "top_margin_store": {"store_id": "S003", "location": "Denver", "profit_margin_pct": 17.26}
+}
+

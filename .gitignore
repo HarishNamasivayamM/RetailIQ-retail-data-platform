@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+.coverage
+htmlcov/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+
+# Generated data and runtime artifacts
+data/generated/
+data/processed/*.csv
+data/processed/*.json
+data/sample/*.csv
+data/sample/*.json
+artifacts/*.json
+artifacts/*.csv
+logs/
+airflow.cfg
+airflow.db
+dbt/target/
+dbt/logs/
+dbt/packages/
+dbt/dbt_packages/
+
+# Notebooks and OS/editor files
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Power BI local/temporary files
+*.pbix.autosave
+*.pbit.autosave
+*.tmp

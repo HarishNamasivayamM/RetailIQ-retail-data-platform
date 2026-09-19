@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: fct_sales
+    description: >-
+      One row per retail transaction line. transaction_id is the durable source key;
+      customer_key, product_key, date_key, and store_key are deterministic surrogate keys.
+    columns:
+      - name: transaction_id
+        tests: [not_null, unique]
+      - name: customer_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customer')
+              field: customer_key
+      - name: product_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_product')
+              field: product_key
+      - name: date_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: date_key
+      - name: store_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_store')
+              field: store_key
+      - name: net_sales
+        tests: [not_null]

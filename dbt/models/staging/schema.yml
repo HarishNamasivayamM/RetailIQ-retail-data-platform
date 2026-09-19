@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_transactions
+    description: >-
+      Standardized transaction lines. Grain is one row per source transaction_id.
+      This model owns type casting and naming only; reusable business joins happen downstream.
+    columns:
+      - name: transaction_id
+        description: "Stable source key; unique at the staging grain."
+        tests: [not_null, unique]
+      - name: transaction_date
+        tests: [not_null]
+      - name: quantity
+        tests:
+          - not_null
+      - name: net_sales
+        tests: [not_null]
+      - name: profit
+        tests: [not_null]

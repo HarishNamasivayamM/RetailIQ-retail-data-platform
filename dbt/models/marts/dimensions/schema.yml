@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: dim_customer
+    description: "Type 1 customer dimension: latest segment plus lifetime summary at build time."
+    columns:
+      - name: customer_key
+        tests: [not_null, unique]
+      - name: customer_id
+        tests: [not_null, unique]
+  - name: dim_product
+    description: "Type 1 product dimension sourced from the current transaction feed."
+    columns:
+      - name: product_key
+        tests: [not_null, unique]
+      - name: product_id
+        tests: [not_null, unique]
+  - name: dim_date
+    description: "Calendar dimension spanning the transaction source date range."
+    columns:
+      - name: date_key
+        tests: [not_null, unique]
+  - name: dim_store
+    description: "Type 1 store dimension sourced from the current transaction feed."
+    columns:
+      - name: store_key
+        tests: [not_null, unique]
+      - name: store_id
+        tests: [not_null, unique]
+

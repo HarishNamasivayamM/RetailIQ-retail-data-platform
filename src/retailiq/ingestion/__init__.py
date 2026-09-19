@@ -1,0 +1,1 @@
+"""RetailIQ source ingestion package."""

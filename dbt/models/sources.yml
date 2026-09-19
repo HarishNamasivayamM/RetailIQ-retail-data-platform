@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: retailiq_raw
+    description: "Source-preserving transaction records loaded by the Python/Airflow ingestion path."
+    database: "{{ env_var('SNOWFLAKE_DATABASE', 'RETAILIQ') }}"
+    schema: RAW
+    loader: retailiq_airflow
+    config:
+      loaded_at_field: loaded_at
+      freshness:
+        warn_after: {count: 24, period: hour}
+        error_after: {count: 72, period: hour}
+    tables:
+      - name: transactions
+        description: "One source transaction line per row; de-duplicated on transaction_id at load time."
+        columns:
+          - name: transaction_id
+            description: "Stable source business key for the transaction line."
+            tests: [not_null, unique]
+          - name: transaction_date
+            tests: [not_null]
+          - name: customer_id
+            tests: [not_null]
+          - name: product_id
+            tests: [not_null]
+          - name: loaded_at
+            description: "Warehouse ingestion timestamp used for freshness and incremental watermarks."
