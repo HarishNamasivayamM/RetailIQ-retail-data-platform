@@ -143,6 +143,9 @@ without a Power BI license or a `.pbix` file:
   for a reproducible KPI and chart walkthrough.
 - **Static HTML:** run `python scripts/build_static_report.py` and open
   [`reports/retailiq_report.html`](reports/retailiq_report.html) in any browser.
+- **PDF evidence report:** open the sanitized
+  [`RetailIQ evidence report`](output/pdf/retailiq_evidence_report.pdf), generated
+  by `python scripts/build_pdf_report.py`.
 
 The full walkthrough, including a recommended presentation order, is in
 [`docs/demo_guide.md`](docs/demo_guide.md). The sanitized run results and

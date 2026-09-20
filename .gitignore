@@ -27,6 +27,7 @@ artifacts/*.json
 artifacts/*.csv
 !artifacts/sample_metrics.json
 logs/
+tmp/
 airflow.cfg
 airflow.db
 dbt/target/
