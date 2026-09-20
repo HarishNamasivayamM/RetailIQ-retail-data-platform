@@ -145,7 +145,8 @@ without a Power BI license or a `.pbix` file:
   [`reports/retailiq_report.html`](reports/retailiq_report.html) in any browser.
 
 The full walkthrough, including a recommended presentation order, is in
-[`docs/demo_guide.md`](docs/demo_guide.md).
+[`docs/demo_guide.md`](docs/demo_guide.md). The sanitized run results and
+reproduction commands are in [`docs/run_evidence.md`](docs/run_evidence.md).
 
 ## Power BI status
 
