@@ -13,6 +13,7 @@ from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
 from reportlab.platypus import (
     KeepTogether,
+    Image,
     PageBreak,
     Paragraph,
     SimpleDocTemplate,
@@ -297,7 +298,31 @@ def build() -> None:
     story.append(p("dbt docs generate --project-dir /opt/retailiq/dbt --profiles-dir /opt/retailiq/docker/airflow<br/>dbt docs serve --host 0.0.0.0 --port 8081", code))
 
     story.append(PageBreak())
-    story.append(p("4. Analytics and presentation outputs", h1))
+    story.append(p("4. dbt lineage screenshot", h1))
+    story.append(
+        p(
+            "This captured dbt graph shows the tested path from the raw transaction source through "
+            "staging and intermediate enrichment into dimensions, the sales fact, analytics marts, "
+            "and singular quality assertions.",
+            body,
+        )
+    )
+    dbt_image = ROOT / "tmp" / "pdfs" / "dbt-dag-cropped.png"
+    story.append(Image(str(dbt_image), width=7.05 * inch, height=3.13 * inch, hAlign="CENTER"))
+    story.append(Spacer(1, 0.16 * inch))
+    lineage_data = [
+        ["Layer", "Models or tests visible in the graph"],
+        ["Source", "retailiq_raw_transactions"],
+        ["Staging", "stg_transactions"],
+        ["Intermediate", "int_transaction_enriched"],
+        ["Dimensions", "dim_customer, dim_product, dim_date, dim_store"],
+        ["Fact and marts", "fct_sales; mart_kpi_summary, mart_product_performance, mart_store_performance, mart_customer_performance"],
+        ["Quality assertions", "assert_no_orphaned_fact_keys, assert_positive_quantity, assert_profit_reconciles"],
+    ]
+    story.append(styled_table(lineage_data, [1.35 * inch, 5.7 * inch], header_color=TEAL))
+
+    story.append(PageBreak())
+    story.append(p("5. Analytics and presentation outputs", h1))
     story.append(p("The same verified baseline is available through several presentation surfaces:", body))
     outputs = [
         ["Surface", "Access", "What it demonstrates"],
@@ -313,7 +338,7 @@ def build() -> None:
     story.append(p("Hosted dashboard", h2))
     story.append(p("https://retailiq-retail-data-platform-bv7cmxx76gmya93dhfzscx.streamlit.app/", code))
 
-    story.append(p("5. Security and reproducibility", h1))
+    story.append(p("6. Security and reproducibility", h1))
     story.append(
         p(
             "The repository contains source code, SQL, model contracts, tests, sanitized metrics, "

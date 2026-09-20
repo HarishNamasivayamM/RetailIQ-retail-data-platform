@@ -40,6 +40,8 @@ Airflow DAG: `retailiq_pipeline`
 - `snowflake/`: database, stage, table, load, and validation SQL.
 - `docs/sample_metrics.json` and `artifacts/sample_metrics.json`: sanitized
   verified metrics for reproducible demonstrations.
+- `assets/dbt-dag.png`: captured dbt lineage graph showing source, models, marts,
+  and quality assertions.
 - `notebooks/`, `reports/`, and `streamlit_app.py`: presentation outputs.
 
 ## How to show the evidence locally

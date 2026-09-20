@@ -146,6 +146,8 @@ without a Power BI license or a `.pbix` file:
 - **PDF evidence report:** open the sanitized
   [`RetailIQ evidence report`](output/pdf/retailiq_evidence_report.pdf), generated
   by `python scripts/build_pdf_report.py`.
+- **dbt lineage screenshot:** open the committed [`dbt DAG image`](assets/dbt-dag.png)
+  or see it embedded in the PDF evidence report.
 
 The full walkthrough, including a recommended presentation order, is in
 [`docs/demo_guide.md`](docs/demo_guide.md). The sanitized run results and
